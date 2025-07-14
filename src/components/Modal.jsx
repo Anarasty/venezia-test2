@@ -1,6 +1,6 @@
 // src/components/Modal.jsx
-import React from 'react';
-import '../scss/Modal.scss';
+import React from "react";
+import "../scss/Modal.scss";
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -8,7 +8,9 @@ const Modal = ({ isOpen, onClose, children }) => {
   return (
     <div className="modal-backdrop">
       <div className="modal">
-        <button className="modal-close" onClick={onClose}>×</button>
+        <button className="modal-close" onClick={onClose}>
+          ×
+        </button>
         {children}
       </div>
     </div>

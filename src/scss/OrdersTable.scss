@@ -1,4 +1,4 @@
-// @import "../components/ConfirmModal";
+@import "ConfirmModal";
 
 .order-container {
   padding: 4rem;
@@ -44,7 +44,7 @@
             border-radius: 0.2rem;
             cursor: pointer;
             font-size: 0.8rem;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
 
             &:first-child {
               background-color: #007bff;
@@ -67,6 +67,31 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .pagination {
+    // background: red;
+    @include flex-center;
+
+    button {
+      margin: 0.6rem;
+      @include button-default;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.4rem;
+
+      &:hover {
+        color: black;
+        background: transparent;
+      }
+
+      &:disabled,
+      &[disabled] {
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
       }
     }
   }

@@ -20,11 +20,11 @@
 
     button {
       @include button-default;
-    
+
       color: black;
       background: transparent;
-      border-radius: .3rem;
-      
+      border-radius: 0.3rem;
+
       &:hover {
         color: rgb(255, 255, 255);
         background: black;

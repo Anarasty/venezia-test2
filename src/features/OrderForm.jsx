@@ -15,7 +15,7 @@ const OrderForm = ({ initialValues, onClose }) => {
           number: "",
           client: "",
           date: "",
-          status: "",
+          status: "New",
           amount: "",
         }
       }
@@ -25,14 +25,17 @@ const OrderForm = ({ initialValues, onClose }) => {
         if (!values.client) errors.client = "Required";
         if (!values.date) errors.date = "Required";
         if (!values.status) errors.status = "Required";
-        if (!values.amount) errors.amount = "Required";
+        if (values.amount === "" || values.amount < 0)
+          errors.amount = "Must be >= 0";
         return errors;
       }}
       onSubmit={(values) => {
+        const sanitizedAmount = Math.max(0, Number(values.amount));
+        const payload = { ...values, amount: sanitizedAmount };
         if (isEdit) {
-          dispatch(updateOrder({ ...values, id: initialValues.id }));
+          dispatch(updateOrder({ ...payload, id: initialValues.id }));
         } else {
-          dispatch(addOrder(values));
+          dispatch(addOrder(payload));
         }
         onClose();
       }}
@@ -55,6 +58,7 @@ const OrderForm = ({ initialValues, onClose }) => {
               )}
             </Field>
           </div>
+
           <div className="form-container">
             <label>Client</label>
             <Field name="client">
@@ -71,6 +75,7 @@ const OrderForm = ({ initialValues, onClose }) => {
               )}
             </Field>
           </div>
+
           <div className="form-container">
             <label>Date</label>
             <Field name="date">
@@ -83,22 +88,21 @@ const OrderForm = ({ initialValues, onClose }) => {
               )}
             </Field>
           </div>
+
           <div className="form-container">
             <label>Status</label>
-            <Field name="status">
-              {({ field }) => (
-                <input
-                  {...field}
-                  placeholder={
-                    touched.status && errors.status
-                      ? errors.status
-                      : "Enter status"
-                  }
-                  className={touched.status && errors.status ? "error" : ""}
-                />
-              )}
+            <Field
+              name="status"
+              as="select"
+              className={touched.status && errors.status ? "error" : ""}
+            >
+              <option value="New">New</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+              <option value="Canceled">Canceled</option>
             </Field>
           </div>
+
           <div className="form-container">
             <label>Amount</label>
             <Field name="amount">
@@ -106,6 +110,7 @@ const OrderForm = ({ initialValues, onClose }) => {
                 <input
                   {...field}
                   type="number"
+                  min="0"
                   placeholder={
                     touched.amount && errors.amount
                       ? errors.amount
