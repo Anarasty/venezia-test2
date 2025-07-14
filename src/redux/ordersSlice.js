@@ -1,8 +1,12 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
 import { loadState, saveState } from '../utils/localStorage';
-import mockOrders from '../data/data.json'; // твой мок JSON
+import mockOrders from '../data/data.json';
 
-const initialState = loadState('orders') || mockOrders;
+let initialState = loadState('orders');
+if (!initialState || initialState.length === 0) {
+  initialState = mockOrders;
+  saveState('orders', initialState);
+}
 
 const ordersSlice = createSlice({
   name: 'orders',

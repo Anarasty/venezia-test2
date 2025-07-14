@@ -13,7 +13,6 @@ import { deleteOrder } from "../redux/ordersSlice";
 
 import '../scss/OrdersPage.scss';
 
-
 const OrdersPage = () => {
   const [editingOrder, setEditingOrder] = useState(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -67,18 +66,27 @@ const OrdersPage = () => {
     pdfMake.createPdf(docDefinition).download("orders.pdf");
   };
 
+  const handleCreateOrder = () => {
+    setEditingOrder({
+      number: "",
+      client: "",
+      date: "",
+      status: "",
+      amount: "",
+    });
+  };
+
   return (
     <div className="order-page">
       <h1>Orders</h1>
 
       <div className="btn-container">
-        <button onClick={() => setEditingOrder({})}>Create Order</button>{" "}
+        <button onClick={handleCreateOrder}>Create Order</button>
         <button onClick={exportToPDF}>Export PDF</button>
       </div>
 
       <OrdersTable onEdit={setEditingOrder} onDelete={handleDelete} />
 
-      {/* форма создания / редактирования */}
       <Modal isOpen={!!editingOrder} onClose={() => setEditingOrder(null)}>
         <OrderForm
           initialValues={editingOrder}
@@ -86,7 +94,6 @@ const OrdersPage = () => {
         />
       </Modal>
 
-      {/* подтверждение удаления */}
       <ConfirmModal
         isOpen={confirmOpen}
         message="Are you sure you want to delete this order?"
