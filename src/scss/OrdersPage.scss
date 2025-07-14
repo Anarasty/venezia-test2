@@ -1,0 +1,35 @@
+@import "ConfirmModal";
+
+.order-page {
+  width: 100%;
+  @include flex-center;
+  flex-direction: column;
+  // background-color: red;
+
+  h1 {
+    margin: 5rem 0 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .btn-container {
+    @include flex-center;
+    // background-color: aquamarine;
+    width: 30%;
+    justify-content: space-around;
+
+    button {
+      @include button-default;
+    
+      color: black;
+      background: transparent;
+      border-radius: .3rem;
+      
+      &:hover {
+        color: rgb(255, 255, 255);
+        background: black;
+        cursor: pointer;
+      }
+    }
+  }
+}

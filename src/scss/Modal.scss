@@ -1,0 +1,32 @@
+@import "ConfirmModal";
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  @include flex-center;
+  z-index: 2;
+
+  .modal {
+    background: #fff;
+    padding: 2rem;
+    border-radius: .5rem;
+    // min-width: 500px;
+    // min-width: 50%;
+    max-width: 80%;
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+
+    &-close {
+      position: absolute;
+      top: 0;
+      // padding: 1rem;
+      right: .5rem;
+      background: transparent;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+  }
+}

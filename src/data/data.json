@@ -1,0 +1,50 @@
+[
+    {
+      "id": "1",
+      "number": "ORD-001",
+      "client": "Client A",
+      "date": "2025-07-14",
+      "status": "New",
+      "amount": 1000
+    },
+    {
+      "id": "2",
+      "number": "ORD-002",
+      "client": "Client B",
+      "date": "2025-07-12",
+      "status": "In Progress",
+      "amount": 2000
+    },
+    {
+      "id": "3",
+      "number": "ORD-003",
+      "client": "Client C",
+      "date": "2025-07-20",
+      "status": "Completed",
+      "amount": 3000
+    },
+    {
+      "id": "4",
+      "number": "ORD-004",
+      "client": "Client D",
+      "date": "2025-07-15",
+      "status": "Completed",
+      "amount": 1500
+    },
+    {
+      "id": "5",
+      "number": "ORD-005",
+      "client": "Client E",
+      "date": "2025-07-22",
+      "status": "New",
+      "amount": 2300
+    },
+    {
+      "id": "6",
+      "number": "ORD-006",
+      "client": "Client F",
+      "date": "2025-07-09",
+      "status": "Completed",
+      "amount": 3000
+    }
+  ]
