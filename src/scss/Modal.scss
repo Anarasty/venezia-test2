@@ -11,8 +11,6 @@
     background: #fff;
     padding: 2rem;
     border-radius: 0.5rem;
-    // min-width: 500px;
-    // min-width: 50%;
     max-width: 80%;
     position: relative;
     @include flex-center;
@@ -21,7 +19,6 @@
     &-close {
       position: absolute;
       top: 0;
-      // padding: 1rem;
       right: 0.5rem;
       background: transparent;
       border: none;

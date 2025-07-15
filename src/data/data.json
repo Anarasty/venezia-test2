@@ -1,50 +1,50 @@
 [
   {
     "id": "1",
-    "number": "ORD-001",
-    "client": "Client A",
+    "number": "293814",
+    "client": "Ivan Ivanov",
     "date": "2025-07-14",
     "status": "New",
     "amount": 1000
   },
   {
     "id": "2",
-    "number": "ORD-002",
-    "client": "Client B",
+    "number": "555347",
+    "client": "Pavlo Pavlov",
     "date": "2025-07-12",
     "status": "In Progress",
     "amount": 2000
   },
   {
     "id": "3",
-    "number": "ORD-003",
-    "client": "Client C",
+    "number": "583667",
+    "client": "Maxim Maximov",
     "date": "2025-07-20",
-    "status": "Completed",
+    "status": "Canceled",
     "amount": 3000
   },
   {
     "id": "4",
-    "number": "ORD-004",
-    "client": "Client D",
+    "number": "256677",
+    "client": "Mikhail Mikhailov",
     "date": "2025-07-15",
     "status": "Completed",
     "amount": 1500
   },
   {
     "id": "5",
-    "number": "ORD-005",
-    "client": "Client E",
+    "number": "900549",
+    "client": "Vadim Vadimov",
     "date": "2025-07-22",
     "status": "New",
     "amount": 2300
   },
   {
     "id": "6",
-    "number": "ORD-006",
-    "client": "Client F",
+    "number": "322111",
+    "client": "Danil Danilovich",
     "date": "2025-07-09",
-    "status": "Completed",
-    "amount": 3000
+    "status": "Canceled",
+    "amount": 3400
   }
 ]

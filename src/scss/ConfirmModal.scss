@@ -37,19 +37,11 @@
     }
 
     &-btn__container {
-      // background-color: red;
       width: 100%;
       @include flex-center;
       justify-content: space-around;
 
       button {
-        // margin-right: 2rem;
-        // font-size: 1.05rem;
-        // padding: 0.5rem 1rem;
-        // border: 1px solid black;
-        // color: white;
-        // background: black;
-        // transition: 0.3s ease;
         @include button-default;
 
         &:hover {

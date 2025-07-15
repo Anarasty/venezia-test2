@@ -4,7 +4,6 @@
   width: 100%;
   @include flex-center;
   flex-direction: column;
-  // background-color: red;
 
   h1 {
     margin: 5rem 0 1rem;
@@ -14,7 +13,6 @@
 
   .btn-container {
     @include flex-center;
-    // background-color: aquamarine;
     width: 30%;
     justify-content: space-around;
 
